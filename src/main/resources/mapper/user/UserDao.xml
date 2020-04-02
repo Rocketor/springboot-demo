@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chao.springbootdemo.user.dao.UserDao">
+
+    <select id="getAll" parameterType="java.util.Map" resultType="com.chao.springbootdemo.user.entities.User">
+        select * from user
+    </select>
+
+    <delete id="delById" parameterType="java.lang.Integer">
+        delete from user where id=#{id}
+    </delete>
+
+    <insert id="save" parameterType="com.chao.springbootdemo.user.entities.User">
+        INSERT INTO user (`id`, `username`, `password`, `gmt_create`, `status`) VALUES (NULL, #{username}, #{password}, #{gmtCreate}, #{status});
+    </insert>
+
+    <select id="getUserById" parameterType="java.lang.Integer" resultType="com.chao.springbootdemo.user.entities.User">
+        select * from user where id=#{id}
+    </select>
+
+    <update id="update" parameterType="com.chao.springbootdemo.user.entities.User">
+        UPDATE `demo`.`user`
+            SET `username` = #{username},
+                `password` = #{password}
+            WHERE
+                (`id` = #{id});
+    </update>
+</mapper>

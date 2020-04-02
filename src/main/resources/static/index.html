@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function jump(){
+            window.open("save.html");
+        };
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <button onclick="jump()" class="btn btn-success">添加</button>
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>密码</th>
+                <th>创建时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            <tbody class="pool">
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/getData.js"></script>
+</html>
